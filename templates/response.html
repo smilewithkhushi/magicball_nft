@@ -23,10 +23,17 @@
         </div>
         <div class="content">
             <div class="inputfield">
-                <form>
+                <form action="/mint" method="POST">
+                    <input type="hidden" name="question" value="{{question}}">
+                    <input type="hidden" name="response" value="{{response}}">
                     <button type="submit"
                     class="my-5 text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-10 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-800 dark:focus:ring-purple-900 mx-5"
                     id="askme">Mint NFT</button>
+                    <a href="/">
+                        <button type="submit"
+                        class="my-5 text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-10 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-800 dark:focus:ring-purple-900 mx-5"
+                        id="askme">Ask Another questions</button>
+                    </a>
                 </form>
             </div>
             <br>

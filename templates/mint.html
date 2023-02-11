@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<br>
+        <br>
+            <div>
+                <img src="data:image/png;base64, {{base64}}" alt="NFT Image" />
+            </div>
+        <div class="content">
+            <div class="inputfield">
+                <form action="/mint_nft" method="POST">
+                    <input type="hidden" name="b64_img" value="{{base64}}">
+                    <input type="text" name="address" class="text-black p-5 my-5" placeholder="Enter your wallet address"><br>
+                    <button type="submit"
+                    class="my-5 text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-10 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-800 dark:focus:ring-purple-900 mx-5"
+                    id="askme">Mint NFT</button>
+                </form>
+            </div>
+            <br>
+        </div>
+
+        <br> <br>
+{% endblock content %}

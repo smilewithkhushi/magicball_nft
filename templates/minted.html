@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<br>
+        <br>
+            <div>
+                <img src="data:image/png;base64, {{base64}}" alt="NFT Image" />
+            </div>
+        <div class="content">
+            <h1>Your NFT has been minted</h1>
+            <h1>Token ID: {{token_id}}</h1>
+            <h1>You can check it out at opensea: <a href="https://testnets.opensea.io/assets/mumbai/0xa550040e9b90d8d5afec67b86e44f50356f6fce6/{{token_id}}" class="underline hover:text-blue">Link</a></h1>
+        </div>
+
+        <br> <br>
+{% endblock content %}
