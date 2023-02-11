@@ -10,3 +10,5 @@ app.config["DEBUG"] = True
 @app.route('/', methods=['GET'])
 def home():
     return render('index.html')
+
+app.run()
