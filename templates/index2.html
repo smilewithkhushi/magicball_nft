@@ -1,0 +1,36 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<br>
+        <br>
+
+        <div class="magicball_outer" id="mb-container">
+            <div class="magicball_inner">
+                <h3 class="magicball_response" id="response">8</h3>
+            </div>
+            <div class="magicball_spotlight"></div>
+            <div class="magicball_bg_shadow"></div>
+            <div class="magicball_upper_shadow"></div>
+            <div class="magicball_lower_shadow"></div>
+
+        </div>
+        <br>
+        <div class="content">
+            <div class="inputfield">
+                <form action="/question/submit" method="POST">
+                <input class="p-5 text-black" type="text" id="question" name="question" placeholder="Ask Me Anything!">
+                <br>
+
+                <button type="submit"
+                    class="my-5 text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-10 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-800 dark:focus:ring-purple-900 mx-5"
+                    id="askme">Enter</button>
+                </form>
+            </div>
+            <br>
+
+            <p> <b> Ask a question and click the button to see what Magic 8-Ball has to say</b></p>
+
+        </div>
+
+        <br> <br>
+{% endblock content %}

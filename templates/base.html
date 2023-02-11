@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic NFT Fortune Teller</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://cdn.tailwindcss.com"></script>
+<style>
+
+    *{
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+        color: white;
+    }
+    
+    
+    body{
+        background: radial-gradient(circle at 10% 20%, rgb(30, 30, 30) 0%, rgb(64, 64, 64) 90.2%);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        height: 100vh;
+        letter-spacing: 0.1rem;
+    }
+    
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    
+    .header{
+        padding: 0rem;
+        font-family: 'Adlery';
+        font-size: 2rem;
+    }
+    
+    .magicball_outer{
+        cursor: pointer;
+        background: black;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 0;
+        box-shadow: 20px 20px 30px rgb(13, 15, 12), -10px -10px 30px #4a4a4a;
+        position: relative;
+    }
+    
+    .magicball_inner{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        z-index: #999;
+    }
+    
+    .magicball_response{
+        text-align: center;
+        font-size: 7.5rem;
+        color: #222;
+        line-height: 1.2rem;
+        cursor:pointer;
+        text-overflow: clip;
+    }
+    
+    .magicball_spotlight{
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        top: 5px;
+        background: #333;
+        border-radius: 50%;
+        opacity: 0.2;
+    }
+    .magicball_bg_shadow{
+        position: absolute;
+        width: 175px;
+        height: 175px;
+        top: 0px;
+        border-radius: 50%;
+        background: #666;
+        opacity: 0.2;
+    }
+    
+    .magicball_upper_shadow{
+        position: absolute;
+        width: 75px;
+        height: 50px;
+        background: #AAA;
+        opacity: 0.8;
+        top: 5px;
+        border-radius: 50%;
+        z-index: 5;
+    }
+    
+    
+    .magicball_lower_shadow{
+        position: absolute;
+        width: 255px;
+        height: 255px;
+        background: #AAA;
+        opacity: 0.15;
+        top: 7px;
+        border-radius: 50%;
+    
+    }
+    
+    
+    .inputfield{
+        color: black;
+        display: flex;
+        justify-content: center;
+    }
+    
+    input{
+        padding: 20px 70px 15px 20px;
+        font-size: 15px;
+        border-radius: 20px;
+        text-align: left;
+        border: 0;
+        margin: 2px;
+        color: black;
+    }
+    input:focus{
+        outline: 2px solid rgb(140,0,255);
+    }
+    
+    button{
+        margin: 3px;
+        padding: 10px 80px;
+        font-size: 15px;
+        border-radius: 15px;
+        background-color: purple;
+        color: white;
+        border: 2px solid rgb(18,0,31);
+    }
+    button:hover{
+        background-color: rgb(85,0,85);
+    }
+    button:active{
+        background-color: rgb(34,25,34);
+    }
+    #response{
+        width: 70px;
+        color: black;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 120px;
+    }
+    .whitesurface{
+        width: 140px;
+        height: 140px;
+        background-color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .animateNow{
+        -webkit-animation-name: shake;
+        -webkit-animation-duration: 3s;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-timing-function: ease;
+        -webkit-animation-fill-mode: forwards;
+    }
+    
+    @-webkit-keyframes shake{
+        0%{
+            -webkit-transform: rotate(1280deg) scale(1) translate(10px);
+        }10%{
+            -webkit-transform: translate(10px) rotate(30deg) scale(1,1,1,1);
+        }20%{
+            -webkit-transform: translate(10px) rotate(60deg) scale(1,1,1,1);
+        }30%{
+            -webkit-transform: translate(0,0) rotate(100deg) scale(1,1,1,1);
+        }40%{
+            -webkit-transform: translate(0,0) rotate(130deg) scale(1,1,1,1);
+        }50%{
+            -webkit-transform: translate(0,0) rotate(160deg) scale(1,1,1,1);
+        }60%{
+            -webkit-transform: translate(0,0) rotate(180deg) scale(1,1,1,1);
+        }70%{
+            -webkit-transform: translate(0,0) rotate(0deg) scale(1,1,1,1);
+        }80%{
+            -webkit-transform: translate(0,0) rotate(0deg) scale(1,1,1,1);
+        }90%{
+            -webkit-transform: translate(0,0) rotate(0deg) scale(1,1,1,1);
+        }100%{
+            -webkit-transform: translate(0,0) rotate(0deg) scale(1,1,1,1);
+        }
+    }
+</style>
+
+</head>
+
+<body>
+    <center>
+
+
+        <nav class="bg-white border-black-200 px-2 sm:px-4 py-2.5 rounded dark:bg-black">
+            <div class="container flex flex-wrap items-center justify-between mx-auto">
+                <a href="index.html" class="flex items-center">
+                    <img src="/static/MagicNFT.png" class="h-6 mr-3 sm:h-9" alt="Magic NFT Logo" />
+                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"> MagicNFT</span>
+                </a>
+                <div class="hidden w-full md:block md:w-auto " id="navbar-default">
+                    <ul
+                        class="flex flex-col p-4 mt-4 border border-black rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-black dark:border-black">
+                    </ul>
+                </div>
+            </div>
+        </nav>
+{% block content %}
+{% endblock %}
+
+        <!-- footer  -->
+
+        <footer class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-black fixed bottom-0 w-full">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="/"
+                    class="hover:underline">MagicNFT by Team 404 Not Found</a>. All Rights Reserved.
+            </span>
+            <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+                <li>
+                    <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+                </li>
+                <li>
+                    <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+                </li>
+                <li>
+                    <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline">Contact</a>
+                </li>
+            </ul>
+        </footer>
+
+
+    </center>
+</body>
+
+</html>

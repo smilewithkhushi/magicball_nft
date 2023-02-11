@@ -1,0 +1,36 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<br>
+        <br>
+        <div>
+            <h1 class="text-5xl text-center text-white">{{question}}</h1>
+        </div>
+
+        <div class="magicball_outer" id="mb-container">
+            <div class="magicball_inner">
+                <h3 class="magicball_response" id="response">8</h3>
+            </div>
+            <div class="magicball_spotlight"></div>
+            <div class="magicball_bg_shadow"></div>
+            <div class="magicball_upper_shadow"></div>
+            <div class="magicball_lower_shadow"></div>
+
+        </div>
+        <br>
+        <div>
+            <h1 class="text-5xl text-center text-white">{{response}}</h1>
+        </div>
+        <div class="content">
+            <div class="inputfield">
+                <form>
+                    <button type="submit"
+                    class="my-5 text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-10 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-800 dark:focus:ring-purple-900 mx-5"
+                    id="askme">Mint NFT</button>
+                </form>
+            </div>
+            <br>
+        </div>
+
+        <br> <br>
+{% endblock content %}
