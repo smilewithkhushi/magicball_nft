@@ -1,0 +1,4 @@
+pillow
+thirdweb-sdk
+flask
+python-dotenv
